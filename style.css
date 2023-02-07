@@ -65,10 +65,15 @@ a {
 .navbar a:hover {
   color: var(--Soft-red);
 }
-/* Section */
+
+/************ Main Section ***************/
 
 .main-image {
   width: 100%;
+}
+
+.main-image-small {
+  display: none;
 }
 
 .main-section {
@@ -78,26 +83,25 @@ a {
 }
 
 .main-section-articles {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   margin: 2rem 0;
 }
 
 .main-section-title {
-  width: 50%;
   font-size: 35px;
   font-weight: var(--bolder);
   line-height: 3.5rem;
-  margin-right: 1.5rem;
 }
 
 .main-section-article {
-  width: 50%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   font-size: 14px;
   line-height: 1.3rem;
   color: var(--Dark-grayish-blue);
+  margin-left: 0.5rem;
 }
 
 .main-section-article button {
@@ -159,7 +163,7 @@ a {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   margin-bottom: 4rem;
-  gap: .75rem;
+  /* gap: .75rem; */
 }
 
 .card {
@@ -192,4 +196,31 @@ a {
   font-size: 12px;
   color: var(--Dark-grayish-blue);
   line-height: 1.25rem;
+}
+
+.last {
+  margin-left: 0.5rem;
+}
+
+@media screen and (max-width: 375px) {
+  .navbar {
+    display: none;
+  }
+
+  .main-section{
+    grid-template-columns: 1fr;
+  }
+
+  .main-image {
+    display: none;
+  }
+
+  .main-image-small {
+    display: block;
+  }
+
+  .main-section {
+    display: block;
+  }
+
 }
