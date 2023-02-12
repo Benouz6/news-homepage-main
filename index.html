@@ -1,53 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
-    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- displays site properly based on user's device -->
 
     <title>Frontend Mentor | News homepage</title>
-    <link rel="stylesheet" href="style.css">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png" />
+    <link rel="stylesheet" href="style.css" />
     <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
     <style>
       .attribution { font-size: 11px; text-align: center; }
       .attribution a { color: hsl(228, 45%, 44%); }
     </style>
   </head>
+
   <body>
-    <div class="popup-container">
-    <div class="container">
-      <div>
+    <header>
+      <div class="container">
+        <div class="nav-header">
+          <img src="./assets/images/logo.svg" alt="" class="logo" />
 
-          <div class="nav-header">
-            <img src="./assets/images/logo.svg" alt="" width="3rem" height="3rem" class="logo">
-            <div class="navbar navbar-small hidden">
-              <img class="close" src="./assets/images/icon-menu-close.svg" alt="">
-              <ul>
-                <li><a href='#'>Home</a></li>
-                <li><a href='#'>New</a></li>
-                <li><a href='#'>Popular</a></li>
-                <li><a href='#'>Trending</a></li>
-                <li><a href='#'>Categories</a></li>
-              </ul>
-            </div>
-            <div class="menu">
-              <img id='menu' src="./assets/images/icon-menu.svg" alt="">
-            </div>
+          <img src="./assets/images/icon-menu.svg" class='show-menu-btn toggle-btn' alt="" />
+          <div class="navbar navbar-small hidden">
+
+            <img src="./assets/images/icon-menu-close.svg" class="close-btn toggle-btn" alt="" />
+
+
+            <ul>
+              <li><a href='#'>Home</a></li>
+              <li><a href='#'>New</a></li>
+              <li><a href='#'>Popular</a></li>
+              <li><a href='#'>Trending</a></li>
+              <li><a href='#'>Categories</a></li>
+            </ul>
           </div>
-        </div>
 
+          <div class="popup-container hidden"></div>
+        </div>
       </div>
     </header>
 
 
-      <div class="container">
+    <div class="container">
       <section>
         <div class="main-section">
           <div class="left-section">
             <div class="left-section-image">
-                <img class="main-image" src="./assets/images/image-web-3-desktop.jpg" alt="">
-                <img class="main-image-small" src="./assets/images/image-web-3-mobile.jpg" alt="">
+              <img src="./assets/images/image-web-3-desktop.jpg" class="main-image" alt="" />
+              <img src="./assets/images/image-web-3-mobile.jpg" class="main-image-small" alt="" />
             </div>
             <div class="main-section-articles">
                 <div class="main-section-title">
@@ -86,23 +87,28 @@
       <article>
         <div class="cards">
           <div class="card">
-            <img src="./assets/images/image-retro-pcs.jpg" alt="">
+            <img src="./assets/images/image-retro-pcs.jpg" alt="" />
+
             <div class="card-text">
               <h3>01</h3>
               <h4><a href='#'>Reviving Retro PCs</a></h4>
               <p>What happens when old PCs are given modern upgrades?</p>
             </div>
           </div>
+
           <div class="card">
-            <img src="./assets/images/image-top-laptops.jpg" alt="">
+            <img src="./assets/images/image-top-laptops.jpg" alt="" />
+
             <div class="card-text">
               <h3>02</h3>
               <h4><a href='#'>Top 10 Laptops of 2022</a></h4>
               <p>Our best picks for various needs and budgets.</p>
             </div>
           </div>
+
           <div class="card last">
-            <img src="./assets/images/image-gaming-growth.jpg" alt="">
+            <img src="./assets/images/image-gaming-growth.jpg" alt="" />
+
             <div class="card-text">
                 <h3>03</h3>
                 <h4><a href='#'>The Growth of Gaming</a></h4>
@@ -111,26 +117,24 @@
           </div>
         </div>
       </article>
-
     </div>
 
-      <div class="attribution">
-        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-        Coded by <a href="#">Your Name Here</a>.
-      </div>
-    </body>
-    <script>
-      const menu = document.getElementById('menu');
-      const hidden = document.querySelector('.hidden')
-      const close = document.querySelector('.close')
-      const popup = document.querySelector('.popup')
-      menu.addEventListener('click', () => {
-        hidden.classList.remove('hidden')
-        popup.classList.remove('hidden')
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+      Coded by <a href="#">Your Name Here</a>.
+    </div>
+  </body>
+
+  <script>
+    const toggleBtn = document.querySelectorAll('.toggle-btn')
+    const overlay = document.querySelector('.popup-container')
+    const navbar = document.querySelector('.navbar')
+
+    toggleBtn.forEach((item) => {
+      item.addEventListener('click', () => {
+        overlay.classList.toggle('hidden')
+        navbar.classList.toggle('hidden')
       })
-      close.addEventListener('click', () => {
-        hidden.classList.add('hidden')
-        popup.classList.add('hidden')
-      })
+    })
   </script>
 </html>

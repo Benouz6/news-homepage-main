@@ -19,7 +19,6 @@
   src: url(./assets/fonts/Inter-VariableFont_slnt\,wght.ttf);
 }
 
-
 * {
   margin: 0;
   padding: 0;
@@ -66,10 +65,11 @@ a {
   color: var(--Soft-red);
 }
 
-.menu,
-.close {
+/* .show-menu-btn,
+.close-btn {
   display: none;
-}
+} */
+
 
 /************ Main Section ***************/
 
@@ -207,30 +207,41 @@ a {
   margin-left: 0.5rem;
 }
 
+/* Responsive */
+
 @media screen and (max-width: 375px) {
   .container{
     width: 350px;
   }
 
   .popup-container {
-    background-color: #000000AA;
+    background-color: rgba(0, 0, 0, 0.3);
     position: absolute;
-    width: 100%;
+    width: 96%;
     height: 100vh;
+    top: 0;
+    left: 0;
     z-index: 10;
-    justify-content: center;
-    align-items: center;
-    justify-content: center;
+    transition: opacity 0.2s ease-in-out;
   }
 
-  .close {
-    display: block;
-    margin-left: 80%;
+  .popup-container.hidden {
+    display: none;
   }
-/*
-  .nav-header{
-    margin: 0;
-  } */
+
+  .show-menu-btn {
+    display: block;
+    width: 3rem;
+    height: 1.3rem;
+    margin-top: 0.4rem;
+  }
+
+  .close-btn {
+    position: absolute;
+    right: 16px;
+    top: 32px;
+  }
+
   .navbar-small {
     background-color: white;
     width: 62%;
@@ -240,6 +251,11 @@ a {
     left: 38%;
     top: 0;
     padding-top: 30px;
+    transition: left 2s ease-in-out;
+  }
+
+  .navbar-small.hidden {
+    left: 100%;
   }
 
   .navbar-small ul {
@@ -250,10 +266,6 @@ a {
   .menu {
     display: block;
     margin-top: .5rem;
-  }
-
-  .hidden{
-    display: none;
   }
 
   .main-section ,
