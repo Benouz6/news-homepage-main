@@ -65,10 +65,10 @@ a {
   color: var(--Soft-red);
 }
 
-/* .show-menu-btn,
-.close-btn {
+
+.toggle-btn {
   display: none;
-} */
+}
 
 
 /************ Main Section ***************/
@@ -212,6 +212,10 @@ a {
 @media screen and (max-width: 375px) {
   .container{
     width: 350px;
+  }
+
+  .toggle-btn{
+    display: block;
   }
 
   .popup-container {
