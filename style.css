@@ -247,6 +247,7 @@ a {
   }
 
   .navbar-small {
+    display: block;
     background-color: white;
     width: 62%;
     position: absolute;
@@ -256,6 +257,10 @@ a {
     top: 0;
     padding-top: 30px;
     transition: left 2s ease-in-out;
+  }
+
+  .navbar-small.hidden {
+    display: none;
   }
 
   .navbar-small.hidden {
