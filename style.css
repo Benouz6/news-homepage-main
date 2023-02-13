@@ -109,21 +109,19 @@ a {
   margin-left: 0.5rem;
 }
 
-.main-section-article button {
-  width: 50%;
-  height: 2.5rem;
+.read-more-btn {
+  width: 34%;
+  padding: 0.8rem 1.7rem;
   letter-spacing: .3rem;
   font-size: 11px;
   background-color: var(--Soft-red);
   border: none;
   transition: .3s;
   cursor: pointer;
-}
-
-.main-section-article a {
   color: var(--Off-white);
 }
-.main-section-article button:hover {
+
+.read-more-btn:hover {
   background-color: var(--Very-dark-blue);
 }
 /* Right section */
@@ -247,7 +245,6 @@ a {
   }
 
   .navbar-small {
-    display: block;
     background-color: white;
     width: 62%;
     position: absolute;
@@ -257,10 +254,6 @@ a {
     top: 0;
     padding-top: 30px;
     transition: left 2s ease-in-out;
-  }
-
-  .navbar-small.hidden {
-    display: none;
   }
 
   .navbar-small.hidden {
